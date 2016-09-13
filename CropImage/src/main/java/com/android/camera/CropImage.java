@@ -293,11 +293,11 @@ public class CropImage extends MonitoredActivity {
                 // area around the circle with alpha.  Note the all important
                 // PortDuff.Mode.CLEAR.
                 Canvas c = new Canvas(croppedImage);
+                c.drawColor(0x00000000);
                 Path p = new Path();
                 p.addCircle(width / 2F, height / 2F, width / 2F,
                         Path.Direction.CW);
                 c.clipPath(p, Region.Op.DIFFERENCE);
-                c.drawColor(0x00000000, PorterDuff.Mode.CLEAR);
             }
 
             // If the required dimension is specified, scale the image.
